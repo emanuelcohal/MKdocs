@@ -5,3 +5,4 @@ theme:
 nav:
     - Home: index.md
     - Article: article.md
+    - gt-2: gt-2.md
