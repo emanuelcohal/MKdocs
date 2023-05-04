@@ -4,4 +4,4 @@ theme:
   name: mkdocs
 nav:
     - Home: index.md
-    - About: article.md
+    - Article: article.md
