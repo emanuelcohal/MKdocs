@@ -4,4 +4,5 @@ theme:
   name: mkdocs
 nav:
     - Home: index.md
-    - Article: article.md
+    - About: article.md
+theme: readthedocs
