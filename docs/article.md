@@ -1,3 +1,3 @@
-# My first article
+# Dummy menu
 
-This is my first article with some code. Added
+This is a dummy menu.
