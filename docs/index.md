@@ -42,3 +42,5 @@ Zoom meetings:
 [1/20/23:] (https://drive.google.com/file/d/1enPFl42ZBVjNu86x_yY2qpJzUY1-QmuZ/view?usp=share_link)
 [1/27/23:] (https://drive.google.com/file/d/1XTJ5DKan_VeGL5r6XzU4qAhEVuOn1ch8/view?usp=sharing)
 [2/3/23:] (https://drive.google.com/file/d/1Juj7kdcSiXHJ7Nr2UMu4u_JDcpv7MmoT/view?usp=sharing)
+
+[Contribution guidelines for this project](docs/test.md)
