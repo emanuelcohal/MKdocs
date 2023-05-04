@@ -1,7 +1,7 @@
-# Welcome to My Docs
+# Generative Text
 
-This is the front page of My Docs. New Line
+This is the front page of Generative Text
 
-## Sub
+## Project Description
 
 This is another section.
