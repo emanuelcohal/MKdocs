@@ -24,7 +24,7 @@ name: Update README and Deploy MKDocs
 on:
   push:
     branches:
-main
+      - main
 
 jobs:
   update-readme:
