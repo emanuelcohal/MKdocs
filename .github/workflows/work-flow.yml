@@ -14,7 +14,7 @@ jobs:
       
       - name: Copy README.md files
         run: |
-          cat gt-2/gt-2.md >> README.md
+          cat gt-2/gt-2.md > README.md
       
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
