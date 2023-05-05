@@ -10,26 +10,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
-        uses: actions/checkout@v3
-
-      - name: Get README content from gt-2
-        run: |
-        GT2_README=$(cat gt-2/gt-2.md)
-
-      - name: Update main README
-        run: |
-        echo "$GT2_README" > README.md
-      
-      - name: Commit changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update README from gt-2
-          commit_options: '--no-verify'
-          branch: ${{ github.ref }}
-          commit_user_name: GitHub Actions
-          commit_user_email: actions@github.com
+        uses: actions/checkout@v2
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  Update-Readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy Paste Action
+        uses: ShreyamMaity/Copy-Paste-Action@V2.0
+        with:
+          TOKEN: ${{ secrets.TOKEN }}
+          REPOSITORY : 'student-offers'
+          COPY-FILE-LOCATION : './gt-2/gt-2.md'
+          PASTE-FILE-LOCATION : './README.md'        
