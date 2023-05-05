@@ -4,7 +4,7 @@ theme:
   name: mkdocs
 plugins:
     - snippet:
-          base_path: docs   
+          base_path: root   
 nav:
     - Home: index.md
     - Article: article.md
