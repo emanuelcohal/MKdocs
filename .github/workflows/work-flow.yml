@@ -23,7 +23,7 @@ jobs:
           cat gt-11/gt-11.md >> README.md
           cat gt-26/gt-26.md >> README.md
           cat gt-2/gt-2.md >> cat docs/gt-2.md
-          git add README.md
+          git add README.md docs/gt-2.md
           git commit -m "Update README.md"
           git push origin main
 
