@@ -12,26 +12,24 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
 
-      - name: Get README content from subdirectories
+      - name: Get README content from gt-2
         run: |
-        gt2=$(cat gt-2/gt-2.md)
-        index=$(cat docs/index.md)
+        cd gt-2
+        GT2_README=$(cat README.md)
+        cd ..
 
-      - name: Concatenate README content
-        run: |
-        content="$index\n\n$gt2"
-      
       - name: Update main README
         run: |
-        echo "$content" > README.md 
+        echo "$GT2_README" > README.md
       
       - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add README.md
-          git commit -m "Update README"
-          git push
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: Update README from gt-2
+          commit_options: '--no-verify'
+          branch: ${{ github.ref }}
+          commit_user_name: GitHub Actions
+          commit_user_email: actions@github.com
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
