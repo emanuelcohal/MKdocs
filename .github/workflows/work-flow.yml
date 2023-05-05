@@ -20,11 +20,11 @@
 
 
 
-name: Update README and Deploy MKDocs
-  on:
-    push:
-      branches:
-        - main
+name: work-flow
+ on:
+   push:
+     branches:
+       - main
 
   jobs:
     update-readme:
