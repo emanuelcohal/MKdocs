@@ -14,9 +14,7 @@ jobs:
 
       - name: Get README content from gt-2
         run: |
-        cd gt-2
-        GT2_README=$(cat README.md)
-        cd ..
+        GT2_README=$(cat gt-2/gt-2.md)
 
       - name: Update main README
         run: |
