@@ -1,6 +1,4 @@
 name: work-flow
-plugins:
-  - include-markdown
 on:
   push:
     branches:

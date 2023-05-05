@@ -1,5 +1,7 @@
 site_name: Generative Text
 site_url: https://example.com/
+plugins:
+  - include-markdown
 theme:
   name: mkdocs
 nav:
