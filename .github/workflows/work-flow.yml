@@ -14,6 +14,8 @@ jobs:
 
       - name: Update Readme  
         run: |
+          git config --global user.email "emanuel.cohal@gmail.com"
+          git config --global user.name "emanuelcohal"
           cat gt-2/gt-2.md >> README.md
           git add README.md
           git commit -m "Update README.md"
