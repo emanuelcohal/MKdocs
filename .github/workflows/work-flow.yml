@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
-        uses: actions/checkout@v2
-
-      name: Update README.md
+        uses: actions/checkout@v3
         run: |
           cat gt-2/gt-2.md >> README.md
           git add README.md
