@@ -1,5 +1,4 @@
 name: work-flow
-  
 on:
   push:
     branches:
@@ -10,21 +9,11 @@ jobs:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
-name: Checkout main
-        uses: actions/checkout@v3
+      - name: Checkout main
+        uses: actions/checkout@v2
 
-name: Deploy docs
+      - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
+        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-        run: |
-          pip install mkdocs
-          pip install mkdocs-material
-name: Build site
-        run: |
-          mkdocs build --clean
-name: Deploy site
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          personal_token: ${{ secrets.PERSONAL_TOKEN }}
