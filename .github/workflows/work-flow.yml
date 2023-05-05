@@ -6,6 +6,18 @@ on:
 
 jobs:
   build:
+    name: Update mds
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - uses: nwylynko/markdown-add-files@master
+      - uses: EndBug/add-and-commit@v4
+        with:
+          author_name: README builder
+          message: 'Updated Readme'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
@@ -16,13 +28,4 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  Update-Readme:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Copy Paste Action
-        uses: ShreyamMaity/Copy-Paste-Action@V2.0
-        with:
-          TOKEN: ${{ secrets.TOKEN }}
-          REPOSITORY : 'student-offers'
-          copy_file_location : './gt-2/gt-2.md'
-          paste_file_location : './README.md'        
+      
