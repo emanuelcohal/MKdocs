@@ -2,7 +2,10 @@ site_name: Generative Text
 site_url: https://example.com/
 theme:
   name: mkdocs
+plugins:
+    - snippet:
+          base_path: docs   
 nav:
     - Home: index.md
     - Article: article.md
-    - gt-2: /../gt-2/gt-2.md
+    - gt-2: --8<-- "gt-2.md"

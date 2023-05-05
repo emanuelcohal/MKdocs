@@ -1,35 +1,38 @@
-#name: work-flow
-#on:
-#  push:
-#    branches:
-#      - main
-#jobs:
-#  deploy:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v3
-#      - uses: actions/setup-python@v3
-#        with:
-#          python-version: 3.x
-#      - run: pip install mkdocs
-#      - run: mkdocs gh-deploy --force --clean --verbose
 name: work-flow
 on:
   push:
     branches:
       - main
-
 jobs:
-  build:
-    name: Deploy docs
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout main
-        uses: actions/checkout@v3
-
-      - name: Deploy docs
-        uses: mhausenblas/mkdocs-deploy-gh-pages@master
-        # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
-        env:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+        with:
+          python-version: 3.x
+      - run: pip install mkdocs
+      - run: pip install mkdocs-snippet-plugin 
+      - run: mkdocs gh-deploy --force --clean --verbose
+      env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+# name: work-flow
+# on:
+#   push:
+#     branches:
+#       - main
+
+# jobs:
+#   build:
+#     name: Deploy docs
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout main
+#         uses: actions/checkout@v3
+
+#       - name: Deploy docs
+#         uses: mhausenblas/mkdocs-deploy-gh-pages@master
+#         # Or use mhausenblas/mkdocs-deploy-gh-pages@nomaterial to build without the mkdocs-material theme
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
