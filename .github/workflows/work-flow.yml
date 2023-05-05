@@ -30,9 +30,9 @@ jobs:
   update-readme:
     runs-on: ubuntu-latest
     steps:
-name: Checkout code
-        uses: actions/checkout@v2
-name: Update README
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Update README
         run: |
           cat gt2/README.md > README.md
           echo "" >> README.md
@@ -42,16 +42,16 @@ name: Update README
   deploy-mkdocs:
     runs-on: ubuntu-latest
     steps:
-name: Checkout code
+      - name: Checkout code
         uses: actions/checkout@v3
-name: Install dependencies
+      - name: Install dependencies
         run: |
           pip install mkdocs
           pip install mkdocs-material
-name: Build site
+      - name: Build site
         run: |
           mkdocs build --clean
-name: Deploy site
+      - name: Deploy site
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}
