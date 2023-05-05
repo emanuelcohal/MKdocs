@@ -11,6 +11,8 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
+
+      - name: Update Readme  
         run: |
           cat gt-2/gt-2.md >> README.md
           git add README.md
