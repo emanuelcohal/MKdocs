@@ -2,8 +2,6 @@ site_name: Generative Text
 site_url: https://example.com/
 theme:
   name: mkdocs
-plugins: 
-  - include-markdown
 nav:
     - Home: index.md
     - Article: article.md
