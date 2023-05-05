@@ -11,11 +11,28 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-      
-      - name: Copy README.md files
+
+      - name: Get README content from subdirectories
         run: |
-          cat gt-2/gt-2.md > README.md
+        gt2=$(cat gt-2/gt-2.md)
+        index=$(cat docs/index.md)
+
+      - name: Concatenate README content
+        run: |
+        content="$index\n\n$gt2"
       
+      - name: Update main README
+        run: |
+        echo "$content" > README.md 
+      
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "Update README"
+          git push
+
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
