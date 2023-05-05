@@ -16,8 +16,7 @@ jobs:
           author_name: README builder
           message: 'Updated Readme'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
-  build: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}   
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
