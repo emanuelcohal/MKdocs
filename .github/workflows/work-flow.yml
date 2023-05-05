@@ -26,6 +26,10 @@ jobs:
           git commit -m "Update README.md"
           git push origin main
 
+      - name:Runner     
+        run: |
+          pip install markdown-include
+
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
