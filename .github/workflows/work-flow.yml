@@ -24,5 +24,5 @@ jobs:
         with:
           TOKEN: ${{ secrets.TOKEN }}
           REPOSITORY : 'student-offers'
-          COPY-FILE-LOCATION : './gt-2/gt-2.md'
-          PASTE-FILE-LOCATION : './README.md'        
+          copy_file_location : './gt-2/gt-2.md'
+          paste_file_location : './README.md'        
