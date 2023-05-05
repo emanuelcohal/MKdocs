@@ -1,8 +1,7 @@
 site_name: Generative Text
 site_url: https://example.com/
-markdown_extensions:
-  - markdown_include.include:
-      base_path: .
+plugins:
+  - include-markdown
 theme:
   name: mkdocs
 nav:
