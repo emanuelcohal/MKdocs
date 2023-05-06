@@ -2,7 +2,7 @@ name: work-flow
 on:
   push:
     branches:
-      - main
+      - final
 
 jobs:
   update:
@@ -14,11 +14,13 @@ jobs:
 
       - name: Merger
         run: |
+          git config --global user.name "$(git --no-pager log --format=format:'%an' -n 1)"
+          git config --global user.email "$(git --no-pager log --format=format:'%ae' -n 1)"
           >README.md
           cat gt-2/gt-2.md >> README.md
           git add README.md
           git commit -m "Update README.md"
-          git push origin main
+          git push origin final
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
          
