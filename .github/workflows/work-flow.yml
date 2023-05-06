@@ -12,12 +12,12 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
 
-      - name: Pip install  
-        uses: actions/setup-python@v3
+      - name: Node install  
+        uses: actions/setup-node@v3
         with:
-          python-version: 3.x
+          node-version: 18
       - name: updater
-        run: pip install MarkdownTools
+        run: npm install mdmerge
       - name: merger
         run: mdmerge -o README.md project-description.md    
          
@@ -32,3 +32,4 @@ jobs:
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
+mdmerge -c project-description.md README.md
