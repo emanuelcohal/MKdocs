@@ -11,7 +11,9 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-              actions/setup-python@v2
+
+      - name: Pip install  
+        uses: actions/setup-python@v2
 
       - name: update
         with:
