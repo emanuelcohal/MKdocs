@@ -19,7 +19,7 @@ jobs:
       - name: updater
         run: npm install mdmerge
       - name: merger
-        run: mdmerge -o README.md project-description.md    
+        run: npm run mdmerge -o README.md project-description.md    
          
   build:
     name: Deploy docs
