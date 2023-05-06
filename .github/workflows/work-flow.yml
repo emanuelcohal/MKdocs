@@ -17,9 +17,9 @@ jobs:
         with:
           node-version: 18
       - name: updater
-        run: npm install mdmerge
-      - name: merger
-        run: npm run mdmerge -o README.md project-description.md    
+        run: | 
+          npm install mdmerge
+          npm run mdmerge -o README.md project-description.md    
          
   build:
     name: Deploy docs
