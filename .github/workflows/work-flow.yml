@@ -12,14 +12,14 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
 
-      - name: Node install  
-        uses: actions/setup-node@v3
+      - name: Pip install  
+        uses: actions/setup-python@v3
         with:
-          node-version: 18
+          python-version: 3.x
       - name: updater
-        run: | 
-          npm install mdmerge
-          npm run mdmerge -o README.md project-description.md    
+        run: pip install MarkdownTools
+      - name: merger
+        run: mdmerge -o README.md project-description.md    
          
   build:
     name: Deploy docs
