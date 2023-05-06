@@ -53,7 +53,7 @@ This endpoint calculates the relevancy scores between a given ASIN and a list of
 
 ## Input
 
-The input to this endpoint is an instance of the `AsinsInput` class, which contains the following fields:
+The input to this endpoint is an instance of the `AsinsInput` class , which contains the following fields:
 
 `asin` (string): the ASIN to compare against the competitor ASINs.
 `competitor_asins` (list of strings): the list of competitor ASINs to compare against the given ASIN.
