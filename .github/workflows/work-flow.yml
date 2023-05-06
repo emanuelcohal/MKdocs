@@ -14,12 +14,10 @@ jobs:
 
       - name: Pip install  
         uses: actions/setup-python@v3
-#        with:
-#          python-version: 3.x
+        with:
+          python-version: 3.x
       - name: updater
         run: |
-#         pip install MarkdownTools
-#         mdmerge -o README.md gt-2/gt-2.md gt-4/gt-4.md
           cat gt-2/gt-2.md gt-4/gt-4.md >README.md
     
   build:
