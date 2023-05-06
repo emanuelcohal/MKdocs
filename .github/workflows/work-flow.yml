@@ -11,14 +11,16 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-        
+
       - name: Merger
         run: |
           >README.md
           cat gt-2/gt-2.md >> README.md
           git add README.md
           git commit -m "Update README.md"
-          git push origin main  
+          git push origin main
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
          
   build:
     name: Deploy docs
