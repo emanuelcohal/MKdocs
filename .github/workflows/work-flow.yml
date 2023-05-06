@@ -16,6 +16,7 @@ jobs:
         run: |
           git config --global user.email "emanuel.cohal@gmail.com"
           git config --global user.name "emanuelcohal"
+          pip install mdsaw
           mdsaw -c gt-2/gt-2.md gt-4/gt-4.md README.md
           git commit -m "Update README.md"
           git push origin main
