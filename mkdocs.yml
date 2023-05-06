@@ -4,5 +4,8 @@ theme:
   name: mkdocs
 nav:
     - Home: index.md
-    - Article: article.md
-    - GT-2: gt-2.md
+    - GT-2: GT-2.md
+    - GT-4: GT-4.md
+    - GT-10: GT-10.md
+    - GT-11: GT-11.md
+    - GT-26: GT-26.md

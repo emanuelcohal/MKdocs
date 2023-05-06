@@ -19,7 +19,15 @@ jobs:
           cat project-description.md docs/index.md gt-2/README.md gt-4/README.md gt-10/README.md gt-11/README.md gt-26/README.md > README.md
           >docs/GT-2.md
           cat gt-2/README.md >> docs/GT-2.md
-          git add README.md docs/GT-2.md
+          >docs/GT-4.md
+          cat gt-4/README.md >> docs/GT-4.md
+          >docs/GT-10.md
+          cat gt-10/README.md >> docs/GT-10.md
+          >docs/GT-11.md
+          cat gt-11/README.md >> docs/GT-11.md
+          >docs/GT-26.md
+          cat gt-26/README.md >> docs/GT-26.md
+          git add .
           git commit -m "Update READMEs"
           git push origin main
         env:
