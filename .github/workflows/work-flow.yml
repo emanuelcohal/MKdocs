@@ -17,10 +17,9 @@ jobs:
         with:
           python-version: 3.x
       - name: updater
-        run: |
-         pip install MarkdownTools
-         mdmerge -o README.md project-description.md
-    
+        run: pip install MarkdownTools
+        run: mdmerge -o README.md project-description.md 
+         
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
