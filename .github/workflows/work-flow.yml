@@ -18,6 +18,7 @@ jobs:
           python-version: 3.x
       - name: updater
         run: |
+         pip install --upgrade pip
          pip install mdsaw
          mdsaw -c gt-2/gt-2.md gt-4/gt-4.md README.md  
   build:
