@@ -19,7 +19,7 @@ jobs:
       - name: merger
         run: |
           pip install MarkdownTools 
-          mdmerge -o /README.md /project-description.md
+          mdmerge -o /README.md project-description.md
           mdmerge -o docs/gt-2.md gt-2/gt-2.md   
          
   build:
