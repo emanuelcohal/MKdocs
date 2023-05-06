@@ -5,21 +5,23 @@ on:
       - main
 
 jobs:
+  update:
+    name: Update markdowns
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v3
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install mdsaw
+      - run: mdsaw -c gt-2/gt-2.md gt-4/gt-4.md README.md
   build:
     name: Deploy docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-
-      - name: Update Readme  
-        run: |
-          git config --global user.email "emanuel.cohal@gmail.com"
-          git config --global user.name "emanuelcohal"
-          pip install mdsaw
-          mdsaw -c gt-2/gt-2.md gt-4/gt-4.md README.md
-          git commit -m "Update README.md"
-          git push origin main
 
       - name: Deploy docs
         uses: mhausenblas/mkdocs-deploy-gh-pages@master
