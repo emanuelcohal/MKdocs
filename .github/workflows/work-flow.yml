@@ -18,7 +18,8 @@ jobs:
           python-version: 3.x
       - name: updater
         run: |
-          cat gt-2/gt-2.md gt-4/gt-4.md >README.md
+         pip install MarkdownTools
+         mdmerge -o README.md /gt-2/gt-2.md /gt-4/gt-4.md
     
   build:
     name: Deploy docs
