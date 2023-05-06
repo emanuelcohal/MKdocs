@@ -16,11 +16,10 @@ jobs:
         uses: actions/setup-python@v3
         with:
           python-version: 3.x
-      - name: updater
-        run: pip install MarkdownTools
       - name: merger
-        run: | 
-          mdmerge -o README.md project-description.md
+        run: |
+          pip install MarkdownTools 
+          mdmerge -o /README.md /project-description.md
           mdmerge -o docs/gt-2.md gt-2/gt-2.md   
          
   build:
