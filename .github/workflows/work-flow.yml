@@ -12,8 +12,7 @@ jobs:
       - name: Checkout main
         uses: actions/checkout@v3
 
-      - name: Pip install  
-        uses: actions/setup-python@v2
+      - name: Pip install
         with:
           python-version: 3.x
         run: |
