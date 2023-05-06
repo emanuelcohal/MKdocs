@@ -11,16 +11,14 @@ jobs:
     steps:
       - name: Checkout main
         uses: actions/checkout@v3
-
-      - name: Pip install  
-        uses: actions/setup-python@v3
-        with:
-          python-version: 3.x
-      - name: merger
+        
+      - name: Merger
         run: |
-          pip install MarkdownTools 
-          mdmerge -o test.md project-description.md
-          mdmerge -o docs/gt-2.md gt-2/gt-2.md   
+          >README.md
+          cat gt-2/gt-2.md >> README.md
+          git add README.md
+          git commit -m "Update README.md"
+          git push origin main  
          
   build:
     name: Deploy docs
