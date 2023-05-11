@@ -1,20 +1,18 @@
 # GT14 : Titles and hypotheses Generation
 
-## Overview
+# Overview
 
-This Python script is designed to generate titles and hypotheses for a given product listing based on input data such as search terms, reviews concepts, and competitors' reviews concepts. It uses the FastAPI framework, OpenAI API and Secret Manager. The script defines a FastAPI application and an API endpoint to handle incoming requests and return the generated titles and hypotheses.  
-Test Endpoint : https://gt14-j3sh6qxa4a-uc.a.run.app  
-Production Endpoint : Not deployed yet
+This Python script is designed to generate titles and hypotheses for a given product listing based on input data such as search terms, reviews concepts, and competitors' reviews concepts. It uses the FastAPI framework, OpenAI API and Secret Manager. The script defines a FastAPI application and an API endpoint to handle incoming requests and return the generated titles and hypotheses.
 
-## Requirements
+# Requirements
 
 This Python script generates titles and hypotheses using FastAPI, OpenAI API, and Google Secret Manager. Below are the requirements and dependencies needed to run the script.
 
-### Python Version
+## Python Version
 
 Python 3.7 or higher
 
-### Libraries
+## Libraries
 - fastapi==0.68.1
 - uvicorn==0.15.0
 - gunicorn==20.1.0
@@ -23,7 +21,7 @@ Python 3.7 or higher
 - google-cloud-secret-manager==2.7.1
 - openai==0.27.0
 
-### External Tools
+## External Tools
 
 Google Cloud Secret Manager (to store the OpenAI API key)
 
@@ -53,65 +51,9 @@ To generate a list of titles and hypotheses using OpenAI API.
 
 `TitlesOutput`: An object containing the titles and hypotheses generated.
 
-**Example: generate_title_and_hipothesis function**
-
-#### Input
-
-The `generate_title_and_hipothesis` function takes the following JSON input:
-
-```json
-{
-  "asins_input": {
-    "product_listing": "Sample Product Listing",
-    "search_terms": ["term1", "term2"],
-    "reviews_concepts": ["concept1", "concept2"],
-    "competitors_reviews_concepts": ["competitor_concept1", "competitor_concept2"]
-  },
-  "number_titles": 5
-}
-```
-
-#### Output
-
-The function returns a JSON object containing the generated titles and hypotheses:
-
-```json
-{
-  "titles": [
-    "Generated title 1",
-    "Generated title 2",
-    "Generated title 3",
-    "Generated title 4",
-    "Generated title 5"
-  ],
-  "hypotheses": [
-    {
-      "title": "Generated title 1",
-      "hypothesis": "Generated hypothesis for title 1"
-    },
-    {
-      "title": "Generated title 2",
-      "hypothesis": "Generated hypothesis for title 2"
-    },
-    {
-      "title": "Generated title 3",
-      "hypothesis": "Generated hypothesis for title 3"
-    },
-    {
-      "title": "Generated title 4",
-      "hypothesis": "Generated hypothesis for title 4"
-    },
-    {
-      "title": "Generated title 5",
-      "hypothesis": "Generated hypothesis for title 5"
-    }
-  ]
-}
-```
-
 ### Helper Functions
 
-`generate_titles()`: Generates titles using OpenAI API based on the input parameters.  
+`generate_titles()`: Generates titles using OpenAI API based on the input parameters.
 `generate_hypotheses()`: Generates hypotheses using OpenAI API based on the input titles and product listing.
 
 ### Schemas
@@ -123,48 +65,6 @@ The function returns a JSON object containing the generated titles and hypothese
 
 `logger`: A utility for logging messages.
 `get_secret()`: A utility function to get the OpenAI API key from Secret Manager.
-
-## How to use it
-
-### Try the deployed API
-
-You can visit the deployed version of the API by adding /docs at the end of the endpoint URL. This will provide access to the API documentation and an interface to try the API.
-
-Visit the documentation or try the API using this URL : https://gt14-j3sh6qxa4a-uc.a.run.app/docs
-
-### Running Locally
-To run this API locally, follow these steps:
-
-1. Create and activate a virtual environment.
-2. Install the required libraries by running pip install -r requirements.txt.
-3. Launch the app using the command python -m uvicorn app:app --reload.
-4. Access the API at http://127.0.0.1:8000/.  
-
-Note that you will need to have access to the Secret Manager with your Google Account since the OpenAI API key is stored there. If you do not have access, replace `openai_key` in the file `app/main.py` with your own OpenAI key.
-
-### Deploying to Cloud Run
-The API is currently deployed on Cloud Run. To deploy it to your own project, follow these steps:  
-
-1. Login to the project account using the command `gcloud auth login`.
-2. Set the project using the command `gcloud config set project <project-id>`.
-3. Build the Docker image using the command `docker build -t gcr.io/<project-id>/gt14 .`.
-4. Push the image to Google Container Registry using the command `docker push gcr.io/<project-id>/gt14`. You may need to run the command `gcloud auth configure-docker`.
-5. Deploy the image to Cloud Run using the command `gcloud run deploy gt14 --image gcr.io/<project-id>/gt14 --platform managed --region us-central1 --allow-unauthenticated`
-
-## Project Structure 
-
-At the root of the project, you will find the following files :
-* `requirements.txt` : lists all the required libraries.
-* `README.md` : provides information on how to use the API.
-* `main.py` : defines the host and port for FastAPI.
-* `Dockerfile` : specifies the Docker configuration.
-
-The `/app` directory contains the following files:
-* `schemas`: a folder that contains all the schemas for the API.
-* `tests`: a folder that contains all the tests for the API.
-* `utils`: a folder that contains scripts such as `logger`, `exceptions` and `secret_manager`.
-* `main.py`: a script where all the main logic is defined.
-* `openai.py`: a script where all the methods related to the OpenAI API are defined.
 
 # Testing
 
