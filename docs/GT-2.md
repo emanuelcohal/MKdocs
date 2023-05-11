@@ -1,10 +1,8 @@
 # GT14 : Titles and hypotheses Generation
 
-# Overview
-
 This Python script is designed to generate titles and hypotheses for a given product listing based on input data such as search terms, reviews concepts, and competitors' reviews concepts. It uses the FastAPI framework, OpenAI API and Secret Manager. The script defines a FastAPI application and an API endpoint to handle incoming requests and return the generated titles and hypotheses.
 
-# Requirements
+## Requirements
 
 This Python script generates titles and hypotheses using FastAPI, OpenAI API, and Google Secret Manager. Below are the requirements and dependencies needed to run the script.
 
