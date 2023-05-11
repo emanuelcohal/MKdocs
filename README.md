@@ -40,9 +40,66 @@ Zoom meetings:
 [1/27/23:] (https://drive.google.com/file/d/1XTJ5DKan_VeGL5r6XzU4qAhEVuOn1ch8/view?usp=sharing)
 [2/3/23:] (https://drive.google.com/file/d/1Juj7kdcSiXHJ7Nr2UMu4u_JDcpv7MmoT/view?usp=sharing)
 
-# GT-2
+# Overview
 
-Extract from its  existing text-based listing content all possible keyphrases that describe the product a. Sources to analyze: the listing itself on Amazon (scraping) and what’s pulled into our sp_all_listings_master table in BigQuery for the product b. When scraping, we’re looking to scrape: i. Product Title: id=“productTitle” ii. Key Product Features: id=“feature-bullets” and the a-list-item class underneath iii. Alt text on A+ Content Image: id=“aplus” --> class=“aplus-module” and then img alt underneath that meta description c. In our BQ table, the following fields should have some information: i. item_name = Product Title ii. item_description = Product Decription
+This Python script is designed to generate titles and hypotheses for a given product listing based on input data such as search terms, reviews concepts, and competitors' reviews concepts. It uses the FastAPI framework, OpenAI API and Secret Manager. The script defines a FastAPI application and an API endpoint to handle incoming requests and return the generated titles and hypotheses.
+
+# Requirements
+
+This Python script generates titles and hypotheses using FastAPI, OpenAI API, and Google Secret Manager. Below are the requirements and dependencies needed to run the script.
+
+## Python Version
+Python 3.7 or higher
+
+## Libraries
+fastapi==0.68.1
+uvicorn==0.15.0
+gunicorn==20.1.0
+httpx==0.22.0
+pydantic==1.8.2
+google-cloud-secret-manager==2.7.1
+openai==0.27.0
+
+## External Tools
+Google Cloud Secret Manager (to store the OpenAI API key)
+
+## Functions and Classes
+
+### FastAPI and APIRouter
+
+`FastAPI()`: Creates a new FastAPI application.
+`APIRouter()`: Creates a new APIRouter instance for handling routes in a modular way.
+
+### Main Function
+
+`generate_title_and_hipothesis(request: Request, asins_input: TitlesInput, number_titles: int = 5) -> TitlesOutput`: This function is responsible for generating a list of titles and hypotheses for a given product listing, a list of search terms, reviews concepts, and competitors reviews concepts.
+
+**Purpose**: To generate a list of titles and hypotheses using OpenAI API.
+**Input Parameters**:
+`request (Request)`: The request object.
+`asins_input (TitlesInput)`: The input data containing product listing, search terms, reviews concepts, and competitors reviews concepts.
+`number_titles (int, optional)`: Number of titles to generate. Defaults to 5.
+**Return Values**:
+`TitlesOutput`: An object containing the titles and hypotheses generated.
+
+### Helper Functions
+
+`generate_titles()`: Generates titles using OpenAI API based on the input parameters.
+`generate_hypotheses()`: Generates hypotheses using OpenAI API based on the input titles and product listing.
+
+### Schemas
+
+`TitlesInput`: A Pydantic model defining the input data for generating titles and hypotheses.
+`TitlesOutput`: A Pydantic model defining the output data containing the generated titles and hypotheses.
+
+### Utils
+
+`logger`: A utility for logging messages.
+`get_secret()`: A utility function to get the OpenAI API key from Secret Manager.
+
+# Testing
+
+# Contributing
 # GT-4
 
 Test text for gt-4# GT-10
