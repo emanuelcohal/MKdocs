@@ -43,8 +43,8 @@ To generate a list of titles and hypotheses using OpenAI API.
 
 **Input Parameters**:
 
-`request (Request)`: The request object.
-`asins_input (TitlesInput)`: The input data containing product listing, search terms, reviews concepts, and competitors reviews concepts.
+`request (Request)`: The request object.  
+`asins_input (TitlesInput)`: The input data containing product listing, search terms, reviews concepts, and competitors reviews concepts.  
 `number_titles (int, optional)`: Number of titles to generate. Defaults to 5.
 
 **Return Values**:
