@@ -385,7 +385,9 @@ This script is a relevancy checker that uses OpenAI's GPT-3.5-turbo to determine
   * [Requirements](#requirements)
   * [Flow Description](#flow-description)
     * [Input](#input)
+      * [Example input:](#example-input)
     * [Output](#output)
+      * [Example output:](#example-output)
   * [How to use it](#how-to-use-it)
     * [To deploy this locally:](#to-deploy-this-locally)
 
