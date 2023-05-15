@@ -398,10 +398,10 @@ To run the script, the following requirements should be met:
 
 ## Flow Description
 
-The script receives an HTTP request with the required inputs (`our_product_asin` and `relevant_products_asin`).
-It calls the `load_listing_data` function for each ASIN to load the product data from an external API.
-The `load_listing_data_bq` function is called to load the product data from a BigQuery table.
-The `get_listings_relevancy_openai` function is called to determine the relevancy score between the product listings using OpenAI's GPT-3.5-turbo.
+The script receives an HTTP request with the required inputs (`our_product_asin` and `relevant_products_asin`).  
+It calls the `load_listing_data` function for each ASIN to load the product data from an external API.  
+The `load_listing_data_bq` function is called to load the product data from a BigQuery table.  
+The `get_listings_relevancy_openai` function is called to determine the relevancy score between the product listings using OpenAI's GPT-3.5-turbo.  
 The final result is returned as a JSON object containing the relevancy scores for each ASIN in the `relevant_products_asin` list.
 ### Input
 
