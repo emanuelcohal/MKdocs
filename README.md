@@ -392,9 +392,9 @@ This script is a relevancy checker that uses OpenAI's GPT-3.5-turbo to determine
 
 To run the script, the following requirements should be met:
 
-- Python environment with the necessary libraries installed (`os`, `functions_framework`, `bs4`, `scraper_api`, `logging`,`openai`).
-- The `OPENAI_KEY` environment variable should be set with a valid API key for the OpenAI service.
-- The script should be deployed and configured to handle HTTP requests.
+Python environment with the necessary libraries installed (`os`, `functions_framework`, `bs4`, `scraper_api`, `logging`,`openai`).  
+The `OPENAI_KEY` environment variable should be set with a valid API key for the OpenAI service.  
+The script should be deployed and configured to handle HTTP requests.  
 
 ## Flow Description
 
