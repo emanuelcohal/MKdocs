@@ -9,8 +9,6 @@ This script is a relevancy checker that uses OpenAI's GPT-3.5-turbo to determine
 <!---toc start-->
 
 * [Listings Relevancy (GT-11)](#listings-relevancy-gt-11)
-  * [Overview](#overview)
-  * [Table of Contents](#table-of-contents)
   * [Current endpoint:](#current-endpoint)
   * [Requirements](#requirements)
   * [Flow Description](#flow-description)
