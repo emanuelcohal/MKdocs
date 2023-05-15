@@ -246,7 +246,6 @@ This Python script searches Amazon for given search keywords and extracts the AS
 <!---toc start-->
 
 * [Focal Keyword Search (GT-10)](#focal-keyword-search-gt-10)
-  * [Overview](#overview)
   * [Current endpoint:](#current-endpoint)
   * [Requirements](#requirements)
     * [Flow Description](#flow-description)
@@ -263,7 +262,7 @@ This Python script searches Amazon for given search keywords and extracts the AS
 
 ## Current endpoint: 
 
-gt-10-focal-keyword-search: https://gt-10-focal-keyword-search-kknzgohiuq-uc.a.run.app
+*gt-10-focal-keyword-search: https://gt-10-focal-keyword-search-kknzgohiuq-uc.a.run.app*
 
 ## Requirements
 
