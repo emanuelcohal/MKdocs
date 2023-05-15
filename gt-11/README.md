@@ -45,7 +45,7 @@ The input is a JSON object containing two keys:
 `our_product_asin`: The ASIN of the product we want to compare (e.g., B0874XN4D8).
 `relevant_products_asin`: A list of ASINs of the relevant products (e.g., ['B09VLK9W3S', 'B09VSR2ZHD']).
 
-Example input:
+#### Example input:
 
 ```json
 {
@@ -58,7 +58,7 @@ Example input:
 
 The output is a JSON object containing the relevancy scores for each ASIN in the relevant_products_asin list. The keys are the ASINs, and the values are the relevancy scores.
 
-Example output:
+#### Example output:
 
 ```json
 {
