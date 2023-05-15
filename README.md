@@ -243,6 +243,24 @@ Test text for gt-4# Focal Keyword Search (GT-10)
 
 This Python script searches Amazon for given search keywords and extracts the ASINs of non-sponsored products from the first 4 pages of search results. The script uses the Scraper API to scrape the data and BeautifulSoup library to parse the HTML content.
 
+<!---toc start-->
+
+* [Focal Keyword Search (GT-10)](#focal-keyword-search-gt-10)
+  * [Overview](#overview)
+  * [Current endpoint:](#current-endpoint)
+  * [Requirements](#requirements)
+    * [Flow Description](#flow-description)
+    * [Input](#input)
+    * [Output](#output)
+  * [Example](#example)
+    * [Input](#input-1)
+    * [Output](#output-1)
+  * [Amazon Regions](#amazon-regions)
+  * [How to use it](#how-to-use-it)
+    * [To deploy this locally:](#to-deploy-this-locally)
+
+<!---toc end-->
+
 ## Current endpoint: 
 
 gt-10-focal-keyword-search: https://gt-10-focal-keyword-search-kknzgohiuq-uc.a.run.app
