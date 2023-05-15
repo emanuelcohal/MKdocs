@@ -239,17 +239,21 @@ The `/app` directory contains the following files:
 
 Test text for gt-4# Focal Keyword Search (GT-10)
 
+## Overview
+
 This Python script searches Amazon for given search keywords and extracts the ASINs of non-sponsored products from the first 4 pages of search results. The script uses the Scraper API to scrape the data and BeautifulSoup library to parse the HTML content.
 
 ## Current endpoint: 
 
 gt-10-focal-keyword-search: https://gt-10-focal-keyword-search-kknzgohiuq-uc.a.run.app
 
-## Description
+## Requirements
 
-The script contains a main function that takes search keywords and an optional Amazon region as input.  
-It then searches Amazon for the given keywords and extracts the ASINs of non-sponsored products from the first 4 pages of search results.  
-The script returns the list of extracted ASINs along with the search keywords.
+To run the script, the following requirements should be met:
+
+- Python environment with the necessary libraries installed (`os`, `functions_framework`, `bs4`, `scraper_api`, `logging`).
+- The `SCRAPER_API_KEY` environment variable should be set with a valid API key for the Scraper API service.
+- The script should be deployed and configured to handle HTTP requests.
 
 ### Flow Description
 
@@ -306,12 +310,6 @@ search_keywords: The original list of search keywords.
 }
 ```
 
-## Dependencies
-
-BeautifulSoup: To parse the HTML content.  
-Scraper API: To scrape the data from Amazon.  
-Logging: To log the information.  
-
 ## Amazon Regions
 
 The script supports the following Amazon regions:
@@ -337,8 +335,10 @@ The script supports the following Amazon regions:
 - se: amazon.se
 - pl: amazon.pl
 
-### Local setup
-To deploy this locally:
+
+## How to use it
+
+### To deploy this locally:
 
 1. Create a Python virtual environment (Python 3.11.1) and activate it
     ```bash
