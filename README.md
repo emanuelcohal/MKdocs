@@ -244,17 +244,17 @@ Test text for gt-4# Focal Keyword Search (GT-10)
 This Python script searches Amazon for given search keywords and extracts the ASINs of non-sponsored products from the first 4 pages of search results. The script uses the Scraper API to scrape the data and BeautifulSoup library to parse the HTML content.
 
 ## Table of Contents
+
 <!---toc start-->
 
 * [Focal Keyword Search (GT-10)](#focal-keyword-search-gt-10)
   * [Current endpoint:](#current-endpoint)
   * [Requirements](#requirements)
-    * [Flow Description](#flow-description)
+  * [Flow Description](#flow-description)
     * [Input](#input)
+      * [Example input:](#example-input)
     * [Output](#output)
-  * [Example](#example)
-    * [Input](#input-1)
-    * [Output](#output-1)
+      * [Example output:](#example-output)
   * [Amazon Regions](#amazon-regions)
   * [How to use it](#how-to-use-it)
     * [To deploy this locally:](#to-deploy-this-locally)
@@ -273,7 +273,7 @@ To run the script, the following requirements should be met:
 - The `SCRAPER_API_KEY` environment variable should be set with a valid API key for the Scraper API service.
 - The script should be deployed and configured to handle HTTP requests.
 
-### Flow Description
+## Flow Description
 
 The main function takes search keywords and Amazon region as input.  
 It validates the input and calls the `search_amazon()` function with the search keywords and region.  
@@ -283,17 +283,10 @@ The list of extracted ASINs is returned along with the search keywords.
 
 ### Input
 
-search_keywords: A list of search terms to search on Amazon.  
-region: (Optional) Amazon country site to search. Default is 'us'.  
+`search_keywords`: A list of search terms to search on Amazon.  
+`region`: (Optional) Amazon country site to search. Default is 'us'.  
 
-### Output
-
-scraped_asins: A list of extracted ASINs.  
-search_keywords: The original list of search keywords.  
-
-## Example
-
-### Input
+#### Example input:
 
 ```json
 {
@@ -303,6 +296,11 @@ search_keywords: The original list of search keywords.
 ```
 
 ### Output
+
+`scraped_asins`: A list of extracted ASINs.  
+`search_keywords`: The original list of search keywords.  
+
+#### Example output:
 
 ```json
 {
