@@ -4,6 +4,7 @@
 
 This Python script searches Amazon for given search keywords and extracts the ASINs of non-sponsored products from the first 4 pages of search results. The script uses the Scraper API to scrape the data and BeautifulSoup library to parse the HTML content.
 
+## Table of Contents
 <!---toc start-->
 
 * [Focal Keyword Search (GT-10)](#focal-keyword-search-gt-10)
